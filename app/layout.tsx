@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "Nana Yaa's Portfolio",
+    template: "%s | nana-yaa-osei-amoako.vercel.app",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "A creative and thoughtful information technology student @ Inholland",
   openGraph: {
-    title: "chronark.com",
+    title: "Nana Yaa's Portfolio",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+      "A creative and thoughtful information technology student @ Inholland",
+    url: "nana-yaa-osei-amoako.vercel.app",
+    siteName: "nana-yaa-osei-amoako.vercel.app",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "n.png",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "Nana Yaa's Portfolio",
     card: "summary_large_image",
   },
   icons: {
