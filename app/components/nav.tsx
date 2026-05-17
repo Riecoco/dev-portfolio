@@ -26,8 +26,11 @@ export const Navigation: React.FC = () => {
 						: "bg-zinc-900/500  border-zinc-800 "
 				}`}
 			>
-				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
+				<div className="flex flex-row-reverse items-center justify-between p-6 mx-auto">
 					<div className="flex justify-between gap-8">
+						<a href="resume.pdf" className="duration-200 text-zinc-400 hover:text-zinc-100" download>
+						Download Resume
+						</a>
 						<Link
 							href="/projects"
 							className="duration-200 text-zinc-400 hover:text-zinc-100"
@@ -35,10 +38,10 @@ export const Navigation: React.FC = () => {
 							Projects
 						</Link>
 						<Link
-							href="/contact"
+							href="/about"
 							className="duration-200 text-zinc-400 hover:text-zinc-100"
 						>
-							Contact
+							About
 						</Link>
 					</div>
 

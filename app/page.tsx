@@ -3,8 +3,9 @@ import React from "react";
 import Particles from "./components/particles";
 
 const navigation = [
+  { name: "Download Resume", href: "/resume.pdf" },
   { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Home() {
@@ -28,21 +29,14 @@ export default function Home() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        chronark
+      <h1 className="py-3.5 px-0.5 z-10 text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-4xl md:text-6xl lg:text-7xl max-w-6xl text-wrap text-center whitespace-nowrap bg-clip-text ">
+        Nana Yaa Osei-Amoako
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm text-zinc-500 ">
-          I'm building{" "}
-          <Link
-            target="_blank"
-            href="https://unkey.dev"
-            className="underline duration-500 hover:text-zinc-300"
-          >
-            unkey.dev
-          </Link> to solve API authentication and authorization for developers.
+        <h2 className="text-sm text-zinc-500 sm:max-w-md md:max-w-2xl lg:max-w-4xl">
+          I'm a thoughtful, creative student with design and programming skills. I'm seeking an internship opportunity within full stack development to cultivate experience and create innovative technological solutions.
         </h2>
       </div>
     </div>
