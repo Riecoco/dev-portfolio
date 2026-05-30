@@ -1,15 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Card } from "../components/card";
 import { Navigation } from "../components/nav";
 
-const tags = [
-  "UX/UI Design",
-  "Figma",
-  "Prototyping",
-  "Usability Testing",
-  "Accessibility",
+const caseStudies = [
+  {
+    title: "Haarlem Jazz",
+    subtitle: "Designing a festival experience from discovery to tickets",
+    description:
+      "A UX/UI case study for a festival website experience, covering artist discovery, schedules, ticketing, checkout, saved programs, and selected mobile ticketing prototypes.",
+    href: "/case-studies/haarlem-jazz",
+    tags: [
+      "UX/UI Design",
+      "Figma",
+      "Prototyping",
+      "Usability Testing",
+      "Accessibility",
+    ],
+  },
+  {
+    title: "Restaurant Chapeau",
+    subtitle: "Kitchen and bar order management",
+    description:
+      "A kitchen and bar order management interface designed to help restaurant staff track orders, prepare courses, and coordinate linked drinks.",
+    href: "/case-studies/chapeau",
+    image: "/images/case-studies/chapeau/kitchen-final-callouts.png",
+    imageAlt:
+      "Annotated kitchen order management dashboard for Restaurant Chapeau",
+    tags: ["UX/UI Design", "Figma", "Research", "User Flows", "Prototyping"],
+  },
 ];
 
 export const metadata = {
@@ -43,40 +64,48 @@ export default function UXCaseStudiesPage() {
             Case studies
           </h2>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <Card>
-              <Link
-                href="/ux-case-studies/haarlem-jazz"
-                className="block h-full"
-              >
-                <article className="relative flex h-full flex-col p-5 md:p-8">
-                  <div className="flex flex-wrap gap-2">
-                    {tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="mt-6 text-3xl font-bold text-zinc-100 group-hover:text-white font-display sm:text-4xl">
-                    Haarlem Jazz
-                  </h3>
-                  <p className="mt-3 text-base font-medium text-zinc-300">
-                    Designing a festival experience from discovery to tickets
-                  </p>
-                  <p className="mt-4 text-sm leading-7 text-zinc-400 group-hover:text-zinc-300">
-                    A UX/UI case study for a festival website experience,
-                    covering artist discovery, schedules, ticketing, checkout,
-                    saved programs, and selected mobile ticketing prototypes.
-                  </p>
-                  <div className="mt-8 flex items-center gap-2 text-sm font-medium text-zinc-200">
-                    Read case study
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </div>
-                </article>
-              </Link>
-            </Card>
+            {caseStudies.map((caseStudy) => (
+              <Card key={caseStudy.href}>
+                <Link href={caseStudy.href} className="block h-full">
+                  <article className="relative flex h-full flex-col p-5 md:p-8">
+                    {caseStudy.image ? (
+                      <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/70">
+                        <Image
+                          src={caseStudy.image}
+                          alt={caseStudy.imageAlt ?? ""}
+                          fill
+                          sizes="(min-width: 1024px) 560px, 92vw"
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : null}
+                    <div className="flex flex-wrap gap-2">
+                      {caseStudy.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="mt-6 text-3xl font-bold text-zinc-100 group-hover:text-white font-display sm:text-4xl">
+                      {caseStudy.title}
+                    </h3>
+                    <p className="mt-3 text-base font-medium text-zinc-300">
+                      {caseStudy.subtitle}
+                    </p>
+                    <p className="mt-4 text-sm leading-7 text-zinc-400 group-hover:text-zinc-300">
+                      {caseStudy.description}
+                    </p>
+                    <div className="mt-8 flex items-center gap-2 text-sm font-medium text-zinc-200">
+                      Read case study
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </div>
+                  </article>
+                </Link>
+              </Card>
+            ))}
           </div>
         </section>
       </div>
