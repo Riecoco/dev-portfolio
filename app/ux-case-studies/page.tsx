@@ -12,6 +12,8 @@ const caseStudies = [
     description:
       "A UX/UI case study for a festival website experience, covering artist discovery, schedules, ticketing, checkout, saved programs, and selected mobile ticketing prototypes.",
     href: "/case-studies/haarlem-jazz",
+    image: "/images/case-studies/haarlem-jazz/haarlem-jazz.gif",
+    imageAlt: "Animated preview of the Haarlem Jazz UX case study",
     tags: [
       "UX/UI Design",
       "Figma",
