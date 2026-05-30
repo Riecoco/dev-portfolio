@@ -20,16 +20,16 @@ const meta = [
 
 const insights = [
   {
-    title: "Visitors need practical decision-making information.",
-    text: "Users need to compare artists, dates, times, venues, prices, and availability before buying.",
+    title: "Visitors need clear decision-making information.",
+    text: "Research into the existing VisitHaarlem experience showed that ticket information, maps, accessibility details, and FAQs were not always easy to find. Some pages were informative but not action-focused, which could make visitors work too hard before deciding whether to attend.",
   },
   {
-    title: "International visitors need clear and consistent content.",
-    text: "The festival website needed to be understandable in English and easy to scan.",
+    title: "International visitors faced inconsistent content.",
+    text: "Some pages on the existing site were not consistently translated, and in some cases language options disappeared or content reverted to Dutch. For an internationally targeted festival, this created a real barrier. I focused on keeping Haarlem Jazz content in English and making the visual structure scannable even before reading.",
   },
   {
-    title: "The experience needed to support browsing and task completion.",
-    text: "Some users arrive looking for inspiration, while others want to quickly save events or buy tickets.",
+    title: "The experience needed to support two different mindsets.",
+    text: "Some visitors arrive browsing for inspiration. Others already know they want to buy tickets. The design had to work for both without making either feel like they were in the wrong place.",
   },
 ];
 
@@ -39,6 +39,29 @@ type CaseStudyImage = {
   caption: string;
   mobile?: boolean;
 };
+
+const sketches: CaseStudyImage[] = [
+  {
+    src: `${imageBase}/sketches/sketch-homepage.png`,
+    alt: "Early sketch of the Haarlem Jazz homepage structure",
+    caption: "Homepage sketch exploring the main entry points for discovery and booking.",
+  },
+  {
+    src: `${imageBase}/sketches/sketch-schedule.png`,
+    alt: "Early sketch of the Haarlem Jazz schedule page structure",
+    caption: "Schedule sketch testing how visitors could compare performances and ticket options.",
+  },
+  {
+    src: `${imageBase}/sketches/sketch-artist-detail.png`,
+    alt: "Early sketch of the Haarlem Jazz artist detail page structure",
+    caption: "Artist detail sketch balancing discovery content with performance information.",
+  },
+  {
+    src: `${imageBase}/sketches/sketch-venue.png`,
+    alt: "Early sketch of the Haarlem Jazz venue page structure",
+    caption: "Venue sketch organizing practical planning details around the location experience.",
+  },
+];
 
 type DesignSection = {
   title: string;
@@ -86,7 +109,7 @@ const designSections: DesignSection[] = [
   },
   {
     title: "Artist pages built around discovery and decision-making",
-    text: "The brief required artist detail pages, so the design focused on making those pages useful. Artist descriptions, performance details, career highlights, and the playable Figma media player help users understand the artist before booking.",
+    text: "The brief required artist detail pages, so the design focused on making those pages useful. Artist descriptions, performance details, career highlights, and the playable Figma media player help users understand the artist before booking. An earlier version required extra interaction to see artist descriptions, but after feedback I made them visible directly on the page to reduce unnecessary clicks.",
     images: [
       {
         src: `${imageBase}/01_artist_detail_top_callouts.png`,
@@ -370,6 +393,39 @@ export default function HaarlemJazzCaseStudyPage() {
           </div>
         </section>
 
+        <section className="space-y-6">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl font-display">
+              Early Sketches
+            </h2>
+            <p className="mt-4 text-base leading-8 text-zinc-400">
+              Before moving into high-fidelity screens, I used early sketches
+              to explore the core page structures and decide how visitors would
+              move between discovery, comparison, and planning tasks. These
+              sketches helped shape the homepage, schedule, artist detail, and
+              venue pages before the visual design was refined.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {sketches.map((sketch) => (
+              <figure key={sketch.src}>
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/70">
+                  <Image
+                    src={sketch.src}
+                    alt={sketch.alt}
+                    fill
+                    sizes="(min-width: 1024px) 480px, (min-width: 768px) 50vw, 92vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm leading-6 text-zinc-500">
+                  {sketch.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
         <section className="space-y-12">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl font-display">
@@ -435,16 +491,30 @@ export default function HaarlemJazzCaseStudyPage() {
 
         <Section title="Reflection">
           <p>
-            This project taught me to design for different visitor mindsets. A
-            festival website has to support people who want to browse and people
-            who want to complete a task quickly. I also learned how much small
-            interaction details matter, such as empty states, visible ticket
-            actions, clickable areas, and clear page structure.
+            This project taught me how much the details matter. Early on, the
+            artist section required users to interact to see descriptions.
+            Feedback made it clear that information people need to make
+            decisions should be visible immediately, not hidden behind a click. I
+            also ran into things like accordions that only opened from a small
+            arrow instead of the full row, which slowed users down without any
+            real reason. Fixing those kinds of friction points made a bigger
+            difference than I expected.
           </p>
           <p>
-            If I continued the project, I would refine table accessibility, test
-            the checkout flow with more users, and continue improving clickable
-            states and mobile ticketing interactions.
+            Designing for a festival also meant designing for two completely
+            different types of visitors at once: someone casually browsing who
+            wants to be inspired, and someone who already knows what they want
+            and just needs to get to checkout. Small decisions kept coming back
+            to that tension. Where do the artists go on the homepage, high up
+            for browsers or lower so ticket info comes first? How do you nudge
+            someone to create an account and download the app to access their
+            tickets, without making guest users feel pushed away? There is no
+            perfect answer, you just have to pick a side and test it.
+          </p>
+          <p>
+            If I continued, I would refine the table accessibility, complete
+            more usability testing on the checkout flow, and improve the
+            clickable states on artist cards.
           </p>
         </Section>
       </div>

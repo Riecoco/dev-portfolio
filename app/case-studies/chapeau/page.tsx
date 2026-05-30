@@ -29,19 +29,19 @@ const problems = [
 
 const insights = [
   {
-    title: "Busy staff need fewer unnecessary interactions.",
+    title: "1. Complex systems cause real problems for less tech-savvy staff.",
     impact:
-      "I simplified the status flow and focused the interface on the most useful handoff states.",
+      "Before designing anything, I conducted a semi-structured interview with Odunayo Ajakaye, a freelance chef with deep IT knowledge who works at TotaalVERS, a large-scale food supplier in Rotterdam. The interview took place on Teams because meeting on-site was not possible. It was delayed by about 30 minutes because he had double-booked another interviewer, who went first. What made the interview useful was that he could speak in detail about how their system actually worked, not just in theory. Three things stood out: TotaalVERS's system was powerful but criticised internally for being unintuitive. Staff who were not comfortable with technology struggled with it. That directly influenced how much I tried to simplify Chapeau's interface.",
   },
   {
-    title: "Kitchen and bar work differently.",
+    title: "2. Dual validation prevents errors but has a cost.",
     impact:
-      "I created separate views so each role only sees the information they need.",
+      "Their system required two confirmations before an order moved forward: the kitchen marks it done, then the waiter confirms pickup. This prevented double orders and lost tickets, but added about 30 seconds per handoff. I had to decide whether that tradeoff was worth it for a small restaurant running fast dinner service.",
   },
   {
-    title: "Linked drinks need better timing.",
+    title: "3. Operational staff have different needs than regular users.",
     impact:
-      "I added linked drink information so the bar can prepare drinks connected to a course at the right moment.",
+      "Greasy hands, loud environments, split-second decisions. The interview made it clear that kitchen and bar interfaces need large buttons, high contrast, minimal clicks, and instant feedback. One of the staff members at the restaurant was colorblind, which made contrast a real constraint rather than a guideline.",
   },
 ];
 
@@ -60,7 +60,7 @@ const decisions = [
   },
   {
     title: "Simplify the status flow",
-    text: "Earlier versions included more manual preparation states. I simplified the flow because kitchen and bar staff need to work quickly and should not have to update the screen too often during service. The final design focuses on clear visibility and the most important handoff moments.",
+    text: "Earlier versions included more manual preparation states. I simplified the flow because kitchen and bar staff need to work quickly and should not have to update the screen too often during service. The final design focuses on clear visibility and the most important handoff moments. The dual validation approach from my research was considered but felt too slow for a 10-table restaurant where service moves quickly. The priority was keeping the interface out of staff's way.",
   },
 ];
 
@@ -172,12 +172,14 @@ export default function ChapeauCaseStudyPage() {
 
         <Section title="Context">
           <p>
-            Restaurant Chapeau needed a digital ordering system for a small
-            restaurant with 10 tables. The system had to support staff during
-            service by making orders, preparation status, and role
-            responsibilities easier to understand. My part of the project
-            focused on Scenario 3: helping kitchen and bar staff manage orders
-            that are ready to be prepared and served.
+            Restaurant Chapeau is a small fine dining restaurant in Zeewolde
+            with 10 tables, a mostly student staff, and no digital ordering
+            system. Orders were managed with paper tickets and verbal
+            coordination between waiters, kitchen, and bar. The project asked
+            us to design a role-based digital system to replace that. My part
+            focused on Scenario 3: helping kitchen and bar staff see which
+            orders needed preparing, track preparation status, and coordinate
+            linked drinks without things slipping through the cracks.
           </p>
         </Section>
 
@@ -296,16 +298,24 @@ export default function ChapeauCaseStudyPage() {
 
         <Section title="Reflection">
           <p>
-            This project taught me that UX for operational environments is
-            different from designing for casual browsing. In a restaurant, the
-            interface needs to be fast, clear, role-specific, and practical. I
-            learned to design around real working conditions: busy staff,
-            limited attention, quick decisions, and the need to avoid mistakes.
+            The TotaalVERS interview was more useful than I expected going in.
+            Hearing someone describe exactly where their system failed, and
+            why, gave me something concrete to design against. I kept coming
+            back to one thing he said: that the system was designed for power
+            users, not for everyone on the floor.
           </p>
           <p>
-            If I continued this project, I would test the prototype with actual
-            restaurant staff and improve the status-change interaction based on
-            how quickly they understand it.
+            For Chapeau I wanted the opposite. Something a student waiter could
+            pick up on their first shift without a tutorial. That shaped a lot
+            of small decisions: how many status steps to include, where to put
+            course headings, how obvious to make the linked drink indicator.
+            None of those feel like big design moves but they added up.
+          </p>
+          <p>
+            If I continued, I would test the prototype with actual restaurant
+            staff during a service and watch where they hesitate. I think the
+            status flow works on paper but real conditions like noise, speed,
+            and wet hands would probably reveal things I haven't caught yet.
           </p>
         </Section>
       </div>

@@ -1,6 +1,9 @@
 {
-  "name": "chronark.com",
+  "name": "nana-yaa-osei-amoako.vercel.app",
   "version": "0.1.0",
+  "description": "Portfolio website for Nana Yaa Osei-Amoako.",
+  "author": "Nana Yaa Osei-Amoako",
+  "homepage": "https://nana-yaa-osei-amoako.vercel.app",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -37,7 +37,7 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-8 max-w-xl text-center animate-fade-in sm:my-12 md:my-16 md:max-w-2xl lg:max-w-4xl">
         <h2 className="text-sm leading-7 text-zinc-500">
-          I'm a thoughtful, creative student with design and programming skills. I'm seeking an internship opportunity within full stack development to cultivate experience and create innovative technological solutions.
+          I'm an IT student at Inholland with a mix of UX/UI design and development skills. Currently looking for an internship in either direction.
         </h2>
       </div>
     </main>
